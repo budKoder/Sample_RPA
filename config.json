@@ -1,0 +1,14 @@
+{
+  "url": "https://www.kebhana.com/index.html",
+  "move_path": "folder path to move downloaded file",
+  "move_name": "file name to rename downloaded file",
+  "search_date": "search date",
+  "search_type": "search options (must be integer)",
+  "search_type_dtl": "search options detail (must be integer)",
+  "mail": {
+    "receiver":"receiver",
+    "cc": "cc",
+    "title": "mail title",
+    "body": "mail body"
+  }
+}
