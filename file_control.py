@@ -87,12 +87,13 @@ def move_file():
 
         now = datetime.datetime.now().strftime("%Y%m%d")
         move_name = read_single_tag("move_name") + "_" + now + ext
-        shutil.move(full_filename,os.path.join(move_path,move_name))
+        full_move_path = os.path.join(move_path,move_name)
+        shutil.move(full_filename,full_move_path)
 
         webbrowser.open(move_path)
         time.sleep(5)
 
-        return move_name
+        return full_move_path
     except Exception as e:
         msg = f"Failed to move file. Details - {e}\n"
         logger.critical(msg)
