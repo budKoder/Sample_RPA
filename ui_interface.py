@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 550)
+        MainWindow.resize(1000, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(238, 238, 238);")
         self.centralwidget.setObjectName("centralwidget")
@@ -295,7 +295,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setContentsMargins(10, 0, 10, 10)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.body = QtWidgets.QTextBrowser(self.frame_15)
+        self.body = QtWidgets.QTextEdit(self.frame_15)
         self.body.setStyleSheet("background-color:white;")
         self.body.setObjectName("body")
         self.horizontalLayout_5.addWidget(self.body)
