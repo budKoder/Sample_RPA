@@ -381,3 +381,5 @@ class Ui_MainWindow(object):
         self.btn_save.setText(_translate("MainWindow", "Save"))
         self.btn_run.setText(_translate("MainWindow", "Run"))
         self.btn_exit.setText(_translate("MainWindow", "Exit"))
+
+import icons_rc

@@ -16,6 +16,7 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setWindowIcon(QIcon(':/icon/icon/sample_icon.ico'))
 
         # set default page
         self.ui.tabWidget.setCurrentIndex(0)
@@ -27,6 +28,8 @@ class MainWindow(QMainWindow):
         self.ui.btn_save.clicked.connect(self.__btnSave)
         self.ui.btn_run.clicked.connect(self.__btnRun)
         self.ui.btn_exit.clicked.connect(self.__btnExit)
+
+        QAction(QIcon(':/icon/icon/sample_icon.ico'),'Exit',self)
 
     def set_data(self):
         """
