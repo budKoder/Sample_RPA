@@ -2,7 +2,7 @@ import win32com.client
 import time
 import os
 
-from library import read_double_tag, read_html
+from library import read_double_tag
 
 
 def send_mail(attachment):
@@ -10,9 +10,15 @@ def send_mail(attachment):
     mail = outlook.CreateItem(0)
 
     mail.To = read_double_tag("mail","to")
+
     mail.CC = read_double_tag("mail","cc")
+
     mail.Subject = read_double_tag("mail","title")
-    mail.HTMLBody = read_double_tag("mail","body")
+
+    body = read_double_tag("mail","body")
+    body_val = body.replace("\n","<br>")
+    mail.HTMLBody = body_val
+
     mail.Attachments.Add(attachment)
 
     mail.Display(False)
