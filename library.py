@@ -52,3 +52,41 @@ def read_double_tag(tag, sub_tag):
         logger.critical(msg)
         showMbox("Failed to read json file", "Critical", MB_OK|ICON_STOP)
         sys.exit()
+
+
+def update_json(json_data):
+    """
+    update config.json file
+    :param json_data: to update data
+    """
+    try:
+        with open('config.json', 'w+', encoding='UTF8') as make_file:
+            json.dump(json_data, make_file, indent='\t')
+    except Exception as e:
+        msg = f"Failed to update json file. Details - {e}\n"
+        logger.critical(msg)
+        showMbox("Failed to update json file", "Critical", MB_OK|ICON_STOP)
+        sys.exit()
+
+
+def update_single_tag(tag,val):
+    """
+    update single tag json data
+    :param tag: tag to update
+    :param val: value to update
+    """
+    data = read_json()
+    data[tag] = val
+    update_json(data)
+
+
+def update_double_tag(tag,subtag,val):
+    """
+    update double tag json data
+    :param tag: upper tag
+    :param subtag: sub tag
+    :param val: value to update
+    """
+    data = read_json()
+    data[tag][subtag] = val
+    update_json(data)
