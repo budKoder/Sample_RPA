@@ -7,6 +7,7 @@ import sys
 
 from library import read_single_tag, read_double_tag, update_single_tag, update_double_tag
 from message_box import showMbox, MB_OK, MB_YESNO, ICON_INFO
+from file_control import bringFront
 from ui_interface import *
 from bot import run
 
@@ -136,6 +137,7 @@ class MainWindow(QMainWindow):
 
     def __btnRun(self):
         run()
+        bringFront("RPA Sample")
 
     def __btnExit(self):
         self.close()
